@@ -7,6 +7,7 @@ body {
   background-image: url("background.jpg");
   background-size: cover;
   backdrop-filter: blur(10px);
+  font-family: 'Open Sans', sans-serif;
 }
 
 button.explode-button {
@@ -37,4 +38,25 @@ div.explosion-message {
 
 .hidden {
   display: none;
+}
+
+.explode-button {
+  /* оставляем текущие стили */
+}
+
+.explode-button:active {
+  /* добавляем стили для анимации при нажатии */
+  transform: translateY(2px);
+}
+
+.explode-button.pressed {
+  /* добавляем стили для анимации нажатия */
+  transform: translateY(4px);
+}
+
+.wrapper {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }

@@ -6,6 +6,31 @@ const clickCounter = document.querySelector('#counter');
 // Получаем количество кликов из localStorage или устанавливаем его на 0, если его еще нет
 let clickCount = localStorage.getItem('clickCount') || 0;
 
+// Получаем массив полученных достижений из localStorage или устанавливаем его на пустой массив, если его еще нет
+let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+
+// Функция для проверки достижений
+function checkAchievements() {
+  if (clickCount >= 100 && !achievements.includes('achievement1')) {
+    alert('Достижение! "Сосун малого разряда"');
+    achievements.push('achievement1');
+  }
+  if (clickCount >= 1000 && !achievements.includes('achievement2')) {
+    alert('Достижение! "Повелитель спермы"');
+    achievements.push('achievement2');
+  }
+  if (clickCount >= 10000 && !achievements.includes('achievement3')) {
+    alert('Достижение! "Бог спермы');
+    achievements.push('achievement3');
+  }
+  if (clickCount >= 100000 && !achievements.includes('achievement3')) {
+    alert('Достижение! "Владимир Владимирович');
+    achievements.push('achievement3');
+  }
+  // Сохраняем массив достижений в localStorage
+  localStorage.setItem('achievements', JSON.stringify(achievements));
+}
+
 // Устанавливаем количество кликов в счетчик при загрузке страницы
 clickCounter.textContent = clickCount;
 
@@ -19,4 +44,35 @@ explodeButton.addEventListener('click', () => {
   clickCounter.textContent = clickCount;
   // Показываем сообщение об "взрыве"
   explosionMessage.classList.remove('hidden');
+  // Добавляем класс pressed
+  explodeButton.classList.add('pressed');
+  // Удаляем класс pressed через 100 миллисекунд
+  setTimeout(() => explodeButton.classList.remove('pressed'), 100);
+  // Проверяем достижения
+  checkAchievements();
 });
+
+function checkAchievements() {
+  if (clicks >= 1000 && !achievement1) {
+    achievement1 = true;
+    document.getElementById("achievement1").innerHTML = "Выполнено";
+    document.getElementById("achievementsList").innerHTML += "<li>Достижение 1</li>";
+  }
+  if (clicks >= 10000 && !achievement2) {
+    achievement2 = true;
+    document.getElementById("achievement2").innerHTML = "Выполнено";
+    document.getElementById("achievementsList").innerHTML += "<li>Достижение 2</li>";
+  }
+  if (clicks >= 100000 && !achievement3) {
+    achievement3 = true;
+    document.getElementById("achievement3").innerHTML = "Выполнено";
+    document.getElementById("achievementsList").innerHTML += "<li>Достижение 3</li>";
+  }
+}
+
+function updateClicks() {
+  clicks++;
+  document.getElementById("clickCount").innerHTML = clicks;
+
+  checkAchievements();
+}
