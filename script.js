@@ -55,18 +55,18 @@ explodeButton.addEventListener('click', () => {
 function checkAchievements() {
   if (clicks >= 1000 && !achievement1) {
     achievement1 = true;
-    document.getElementById("achievement1").innerHTML = "Выполнено";
-    document.getElementById("achievementsList").innerHTML += "<li>Достижение 1</li>";
+    document.getElementById("achievement1").innerHTML = "Достижение!";
+    document.getElementById("achievementsList").innerHTML += "<li>Низший сосун</li>";
   }
   if (clicks >= 10000 && !achievement2) {
     achievement2 = true;
-    document.getElementById("achievement2").innerHTML = "Выполнено";
-    document.getElementById("achievementsList").innerHTML += "<li>Достижение 2</li>";
+    document.getElementById("achievement2").innerHTML = "Достижение!";
+    document.getElementById("achievementsList").innerHTML += "<li>Пригожин</li>";
   }
   if (clicks >= 100000 && !achievement3) {
     achievement3 = true;
-    document.getElementById("achievement3").innerHTML = "Выполнено";
-    document.getElementById("achievementsList").innerHTML += "<li>Достижение 3</li>";
+    document.getElementById("achievement3").innerHTML = "Достижение!";
+    document.getElementById("achievementsList").innerHTML += "<li>Пенис Душнилин</li>";
   }
 }
 
