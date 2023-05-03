@@ -11,20 +11,16 @@ let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
 
 // Функция для проверки достижений
 function checkAchievements() {
-  if (clickCount >= 100 && !achievements.includes('achievement1')) {
+  if (clickCount >= 1000 && !achievements.includes('achievement1')) {
     alert('Достижение! "Сосун малого разряда"');
     achievements.push('achievement1');
   }
-  if (clickCount >= 1000 && !achievements.includes('achievement2')) {
-    alert('Достижение! "Повелитель спермы"');
+  if (clickCount >= 10000 && !achievements.includes('achievement2')) {
+    alert('Достижение! "Пригожин"');
     achievements.push('achievement2');
   }
-  if (clickCount >= 10000 && !achievements.includes('achievement3')) {
-    alert('Достижение! "Бог спермы');
-    achievements.push('achievement3');
-  }
   if (clickCount >= 100000 && !achievements.includes('achievement3')) {
-    alert('Достижение! "Владимир Владимирович');
+    alert('Достижение! "Пенис Душнилин"');
     achievements.push('achievement3');
   }
   // Сохраняем массив достижений в localStorage
@@ -51,28 +47,3 @@ explodeButton.addEventListener('click', () => {
   // Проверяем достижения
   checkAchievements();
 });
-
-function checkAchievements() {
-  if (clicks >= 1000 && !achievement1) {
-    achievement1 = true;
-    document.getElementById("achievement1").innerHTML = "Достижение!";
-    document.getElementById("achievementsList").innerHTML += "<li>Низший сосун</li>";
-  }
-  if (clicks >= 10000 && !achievement2) {
-    achievement2 = true;
-    document.getElementById("achievement2").innerHTML = "Достижение!";
-    document.getElementById("achievementsList").innerHTML += "<li>Пригожин</li>";
-  }
-  if (clicks >= 100000 && !achievement3) {
-    achievement3 = true;
-    document.getElementById("achievement3").innerHTML = "Достижение!";
-    document.getElementById("achievementsList").innerHTML += "<li>Пенис Душнилин</li>";
-  }
-}
-
-function updateClicks() {
-  clicks++;
-  document.getElementById("clickCount").innerHTML = clicks;
-
-  checkAchievements();
-}
